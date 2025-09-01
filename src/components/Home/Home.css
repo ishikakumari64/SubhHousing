@@ -2081,7 +2081,8 @@ content: "";
   .story-description{width: 2560px;}
   .combined-story-foundations{width: 100%;}
   .rings-parallax{ width: 200px;}
-  .story-right-frame{right: 250px !important; top: -475px; }
+  .story-right-frame{right: 250px !important; top: -655px !important; }
+  .story-right-frame{top: -555px!important;}
   .story-badge {right: -200px!important;}
   .story-right{right:1000px !important; }
   .hero-title { font-size: 4.5rem; }
@@ -2091,7 +2092,7 @@ content: "";
   .rings-parallax { width: 60dvw; height: 60dvh; left: -20%; }
   .philosophy-text { font-size: 1.6rem; width: 1250px;right: -550px; }
   .story-text { font-size: 1.8rem; }
-  .foundations-title { font-size: 4rem; }
+  .foundations-title { font-size: 4rem; margin-top: 800px; }
   .foundations-tagline { font-size: 9rem; }
   .frontiers-title { font-size: 3.5rem; }
   .frontiers-subtitle { font-size: 10rem; }
