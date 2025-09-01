@@ -1,0 +1,543 @@
+.gallery-hall-collections {
+  width: 100%;
+  min-height: 100dvh;
+  background: #f8f8f8;
+}
+
+/* Hero Section */
+.gallery-hero-section {
+  padding: 250px 40px;
+  text-align: center;
+  background: url('/family-blowing.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-hero-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #0f0130;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.gallery-hero-arrow {
+  color: #666;
+  margin-top: 20px;
+}
+
+/* Accordion Gallery Section */
+.gallery-accordion-section {
+  padding: 80px 40px;
+  background: #f8f8f8;
+}
+
+.gallery-accordion-container {
+  display: flex;
+  height: 700px;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 8px;
+  overflow: visible;
+}
+
+.gallery-accordion-item {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  overflow: visible;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Active state for expanded item */
+.gallery-accordion-item.active {
+  flex: 2;
+}
+
+.gallery-accordion-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Image moves up and shrinks on active item */
+.gallery-accordion-item.active .gallery-accordion-image {
+  transform: translateY(0) scale(0.95);
+  height: 100%;
+}
+
+.gallery-accordion-image img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  display: block;
+}
+
+.gallery-accordion-image img:first-child {
+  height: 100%;
+}
+
+.gallery-accordion-item.active .gallery-accordion-image img:first-child {
+  height: 50%;
+}
+
+.gallery-accordion-item.active .gallery-accordion-image img:nth-child(2) {
+  display: block;
+}
+
+.gallery-accordion-image img:nth-child(2) {
+  display: none;
+}
+
+.gallery-accordion-content {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease 0.2s;
+  padding: 20px;
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+/* Show content only on active item */
+.gallery-accordion-item.active .gallery-accordion-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.gallery-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #666;
+  display: block;
+  margin-bottom: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+.gallery-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #333;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  font-style: normal;
+}
+
+.gallery-read-more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  text-transform: capitalize;
+  border-bottom: 1px solid #333;
+  padding-bottom: 2px;
+  width: fit-content;
+}
+
+.gallery-read-more:hover {
+  gap: 12px;
+  color: #666;
+  border-bottom-color: #666;
+}
+
+.gallery-read-more svg {
+  transition: transform 0.3s ease;
+  width: 16px;
+  height: 10px;
+}
+
+.gallery-read-more:hover svg {
+  transform: translateX(4px);
+}
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+  .gallery-hero-section {
+    padding: 300px 60px;
+  }
+  
+  .gallery-hero-title {
+    font-size: 4rem;
+  }
+  
+  .gallery-accordion-section {
+    padding: 100px 60px;
+  }
+  
+  .gallery-accordion-container {
+    height: 800px;
+    gap: 12px;
+  }
+  
+  .gallery-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Desktop (1200px - 1439px) */
+@media (max-width: 1439px) and (min-width: 1200px) {
+  .gallery-hero-section {
+    padding: 280px 50px;
+  }
+  
+  .gallery-hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .gallery-accordion-section {
+    padding: 90px 50px;
+  }
+  
+  .gallery-accordion-container {
+    height: 750px;
+    gap: 10px;
+  }
+}
+
+/* Small Desktop/Large Tablet (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .gallery-hero-section {
+    padding: 220px 40px;
+  }
+  
+  .gallery-hero-title {
+    font-size: 3rem;
+  }
+  
+  .gallery-accordion-section {
+    padding: 70px 40px;
+  }
+  
+  .gallery-accordion-container {
+    height: 650px;
+    gap: 8px;
+  }
+  
+  .gallery-title {
+    font-size: 2rem;
+  }
+  
+  .gallery-accordion-content {
+    bottom: 30px;
+    padding: 18px;
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .gallery-hero-section {
+    padding: 180px 30px;
+  }
+  
+  .gallery-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .gallery-accordion-section {
+    padding: 60px 30px;
+  }
+  
+  .gallery-accordion-container {
+    height: 550px;
+    gap: 6px;
+  }
+  
+  .gallery-accordion-item.active .gallery-accordion-image {
+    transform: translateY(0) scale(0.96);
+  }
+  
+  .gallery-accordion-content {
+    bottom: 25px;
+    padding: 15px;
+    left: 15px;
+    right: 15px;
+  }
+  
+  .gallery-title {
+    font-size: 1.8rem;
+  }
+  
+  .gallery-label {
+    font-size: 10px;
+  }
+  
+  .gallery-read-more {
+    font-size: 13px;
+  }
+}
+
+/* Mobile Large (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .gallery-hero-section {
+    padding: 150px 25px;
+  }
+  
+  .gallery-hero-title {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+  
+  .gallery-accordion-section {
+    padding: 50px 25px;
+  }
+  
+  .gallery-accordion-container {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+  }
+  
+  .gallery-accordion-item {
+    height: 300px;
+    flex: none;
+  }
+  
+  .gallery-accordion-item.active {
+    height: 400px;
+    flex: none;
+  }
+  
+  .gallery-accordion-item.active .gallery-accordion-image {
+    transform: translateY(0) scale(1);
+  }
+  
+  .gallery-accordion-content {
+    bottom: 20px;
+    padding: 12px;
+    left: 12px;
+    right: 12px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  .gallery-title {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  
+  .gallery-label {
+    font-size: 9px;
+    margin-bottom: 8px;
+  }
+  
+  .gallery-read-more {
+    font-size: 12px;
+  }
+}
+
+/* Mobile Medium (480px - 575px) */
+@media (max-width: 575px) and (min-width: 480px) {
+  .gallery-hero-section {
+    padding: 120px 20px;
+  }
+  
+  .gallery-hero-title {
+    font-size: 2rem;
+  }
+  
+  .gallery-accordion-section {
+    padding: 40px 20px;
+  }
+  
+  .gallery-accordion-container {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+  }
+  
+  .gallery-accordion-item {
+    height: 280px;
+  }
+  
+  .gallery-accordion-item.active {
+    height: 350px;
+  }
+  
+  .gallery-accordion-content {
+    bottom: 15px;
+    padding: 10px;
+    left: 10px;
+    right: 10px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  .gallery-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  
+  .gallery-label {
+    font-size: 8px;
+  }
+  
+  .gallery-read-more {
+    font-size: 11px;
+  }
+}
+
+/* Mobile Small (320px - 479px) */
+@media (max-width: 479px) {
+  .gallery-hero-section {
+    padding: 100px 15px;
+  }
+  
+  .gallery-hero-title {
+    font-size: 1.8rem;
+    letter-spacing: 0;
+  }
+  
+  .gallery-accordion-section {
+    padding: 30px 15px;
+  }
+  
+  .gallery-accordion-container {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+  
+  .gallery-accordion-item {
+    height: 250px;
+  }
+  
+  .gallery-accordion-item.active {
+    height: 320px;
+  }
+  
+  .gallery-accordion-content {
+    bottom: 10px;
+    padding: 8px;
+    left: 8px;
+    right: 8px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  .gallery-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+  
+  .gallery-label {
+    font-size: 7px;
+    margin-bottom: 6px;
+  }
+  
+  .gallery-read-more {
+    font-size: 10px;
+    gap: 6px;
+  }
+  
+  .gallery-read-more svg {
+    width: 12px;
+    height: 8px;
+  }
+}
+
+/* Ultra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  .gallery-hero-section {
+    padding: 80px 10px;
+  }
+  
+  .gallery-hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .gallery-accordion-section {
+    padding: 25px 10px;
+  }
+  
+  .gallery-accordion-item {
+    height: 220px;
+  }
+  
+  .gallery-accordion-item.active {
+    height: 280px;
+  }
+  
+  .gallery-title {
+    font-size: 1rem;
+  }
+  
+  .gallery-label {
+    font-size: 6px;
+  }
+  
+  .gallery-read-more {
+    font-size: 9px;
+  }
+}
+
+/* Mobile-specific accordion behavior */
+@media (max-width: 767px) {
+  .gallery-accordion-item.active .gallery-accordion-image img:first-child {
+    height: 60%;
+  }
+  
+  .gallery-accordion-item.active .gallery-accordion-image img:nth-child(2) {
+    height: 40%;
+  }
+}
+
+/* Focus states for accessibility */
+.gallery-accordion-item:focus {
+  outline: 2px solid #007bff;
+  outline-offset: -2px;
+}
+
+/* Ensure smooth transitions for all states */
+.gallery-accordion-item * {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .gallery-accordion-item {
+    cursor: default;
+  }
+  
+  .gallery-read-more:hover {
+    gap: 8px;
+    color: #333;
+    border-bottom-color: #333;
+  }
+  
+  .gallery-read-more:hover svg {
+    transform: translateX(0);
+  }
+}
